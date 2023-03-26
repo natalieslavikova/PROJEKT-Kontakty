@@ -20,9 +20,16 @@ h1{
 text-align: center;
 }
 
+
+.popis{ 
+	text-align: center;
+}
+
 img {
     border-radius: 50%;
     border: 3px solid white;
+	max-width: 100%;
+	
 }
 
 .ctverecek {
@@ -32,38 +39,57 @@ img {
 	text-align: center;  
 	margin-bottom: 20px; 	
 }
-@media screen and (max-width: 539px){
-	.kontejner{
-		display: block;
-	
-	}
-}
 
 
 @media screen and (min-width: 540px){
 	.kontejner{
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2%;
+		gap: 20px;
+		justify-content: space-between;
 	}
 
 	.ctverecek{
+		width: calc(50% - 10px);
+		max-width: calc(50% - 10px);
 		display: flex;
-		flex: 1 1 calc(98% / 2);
-		margin-bottom: 20px;
+		flex-direction: column;
+		justify-content: space-between;
+		
 	}
-}
+
+	.ctverecek,
+	 .uvnitr {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 5px;
+		flex-grow: 1;
+	}
+
+	.ctverecek,
+	 .foto,
+	  .popis{
+		width: 100%;
+	}
+
+	 .uvnitr > * {
+		flex-basis: 0;
+		flex-grow: 1;
+		margin: 0 5px;
+	}
+		
+}	
 
 @media screen and (min-width: 960px){
-	.kontejner{
+	.kontejner {
+		display: flex;
 		flex-wrap: nowrap;
-		gap: 20px;	
-	}
-
-	.ctverecek
-		{display: block;	
+		gap: 20px;
+	  }
+	
+	.ctverecek .uvnitr {
+		display: block;
+		margin-top: 10px;
 	}
 }
-	
-
-
